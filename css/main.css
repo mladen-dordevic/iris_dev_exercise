@@ -1,0 +1,23 @@
+.map-wrap {
+	position : fixed;
+	top : 51px;
+	bottom: 0px;
+	left : 0px;
+	right : 0px;
+}
+
+#content-menu {
+	position: absolute;
+	top: 53px;
+	left: 0;
+	z-index: 10;
+	width: 350px;
+}
+
+#waithing-data {
+	position: fixed;
+	bottom: 5px;
+	right: 0px;
+	z-index: 12;
+	display: none;
+}

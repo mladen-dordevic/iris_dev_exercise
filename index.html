@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>E.Q.B.</title>
+	<meta content="text/html; charset=utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="description" content="Displays locations of earthquakes within 1000km radius of a click.">
+	<meta name="application-name" content="Earth Quake Browser.">
+	<meta name="author" content="Mladen Dordevic">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="./css/main.css">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+	<!--header-->
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar-header">
+			<a class="navbar-brand" id="navbar-toggle-menu" href="javascript:void(0)" >&#8801;</a>
+			<a class="navbar-brand" href="javascript:void(0)">EarthQuake Browser</a>
+		</div>
+	</div>
+	<div class="content">
+		<!--Progress bar indicator-->
+		<div style="position:fixed;top:50px;height:2px;left:0px;right:0px;z-index:20;">
+			<div id="progress-indicator" style="height:100%;width:100%; background:red;"></div>
+		</div>
+		<!--Waiting for data-->
+		<div id="waithing-data" class="well">
+			<span>
+				<img src="images/loading1.gif" height="20px">
+			</span>
+			Waiting for the IRIS servers
+			<p>During this period future requests are suspended</p>
+		</div>
+		<!--Main Menu-->
+		<div id="content-menu" class="panel panel-default">
+			<div class="panel-body">
+				<noscript class="alert alert-danger" role="alert">Pleas use JavaScript enabled browser.</noscript>
+				<h3>Welcome!</h3>
+				<ul>
+					<li>Click on the map and get earthquakes in a 1000km radius.</li>
+					<li>You can toggle this menu by clicking &#8801; in title.</li>
+					<li>By clicking on the individual events marker you will get more informations about it.</li>
+					<li>Zoom in to see location of earthquakes with smaller magnitude</li>
+				</ul>
+					<label>
+						Depth legend 0-800km:
+						<div id="depth-legend"></div>
+					</label>
+					<p></p>
+					<label>
+						Magnitude legend 1-9:
+						<div id="magnitude-legend"></div>
+					</label>
+			</div>
+
+		</div><!-- end of Main Menu-->
+		<!--Map wrap-->
+		<div class="map-wrap">
+			<div id="map3d" style="width:100%; height:100%;"></div>
+		</div>
+	</div>
+	<script src="//maps.googleapis.com/maps/api/js?v=3.18"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+	<script src="./js/main.js" type="text/javascript"></script>
+</body>
+</html>
